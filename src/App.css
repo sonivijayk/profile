@@ -1,0 +1,240 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  color: var(--ink-900);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 6vw;
+  background: #ffffff;
+  border-bottom: 1px solid var(--ink-100);
+  z-index: 2;
+}
+
+.brand {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, monospace;
+  font-size: 1.05rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  line-height: 1;
+}
+
+.brand-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #0f1b2d;
+  color: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  color: var(--ink-700);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--ink-900);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.btn-primary {
+  background: var(--brand-500);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(75, 140, 255, 0.22);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 26px rgba(75, 140, 255, 0.3);
+}
+
+.btn-ghost {
+  border-color: var(--ink-200);
+  color: var(--ink-800);
+  background: transparent;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  padding: 24px 6vw 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile {
+  position: relative;
+  animation: fadeUp 700ms ease;
+}
+
+.profile-card {
+  background: #ffffff;
+  border: 1px solid var(--ink-100);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 16px;
+}
+
+.profile-body h1 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  margin: 8px 0 10px;
+}
+
+.headline {
+  font-weight: 500;
+  color: var(--ink-700);
+  margin-bottom: 12px;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  justify-self: end;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f1b2d, #1f365a);
+  border: 1px solid rgba(63, 107, 220, 0.35);
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.lead {
+  font-size: 1.1rem;
+  color: var(--ink-700);
+  max-width: 720px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--ink-500);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.section {
+  display: grid;
+  gap: 14px;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--ink-100);
+  border-radius: 16px;
+  padding: 24px;
+  animation: fadeUp 900ms ease;
+}
+
+.stack {
+  display: grid;
+  gap: 12px;
+  color: var(--ink-700);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 6vw 40px;
+  color: var(--ink-500);
+  font-size: 0.9rem;
+}
+
+.page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(13, 17, 23, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 17, 23, 0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-photo {
+    width: 160px;
+    height: 160px;
+    justify-self: start;
+  }
+}
