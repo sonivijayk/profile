@@ -7,9 +7,6 @@ function App() {
       <div className="glow glow-b" aria-hidden="true" />
 
       <header className="nav">
-        <div className="brand">
-          <span>Vijay Soni</span>
-        </div>
         <nav className="nav-links">
           <a href="#about">About</a>
           <a href="#connect">Connect</a>
