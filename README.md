@@ -1,6 +1,6 @@
 ## About
 
-Repository holos profile information of Vijay Soni and published as sonivijay.com
+Repository has profile information of Vijay Soni and published as sonivijay.com
 
 ### React + Vite 
 
