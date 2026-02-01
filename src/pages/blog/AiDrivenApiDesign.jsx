@@ -11,7 +11,9 @@ export default function AiDrivenApiDesign() {
           <span>Vijay Soni</span>
         </div>
         <nav className="nav-links">
-          <Link to="/">Home</Link>
+          <a href="/#about">About</a>
+          <a href="/#connect">Connect</a>
+          <a href="/#blogs">Blogs</a>
         </nav>
       </header>
 
@@ -183,9 +185,9 @@ export default function AiDrivenApiDesign() {
         </div>
       </article>
 
-      <footer style={styles.footer}>
-        <p style={styles.footerText}>© 2026 Vijay Soni</p>
-        <p style={styles.footerText}>
+      <footer className="footer">
+        <p>© 2026 Vijay Soni</p>
+        <p>
           All content reflects my personal views, not those of any current or past employer.
         </p>
       </footer>
@@ -234,17 +236,4 @@ const styles = {
 
   footerNav: { marginTop: 28 },
   backLink: { textDecoration: "none", opacity: 0.9 },
-  footer: {
-    maxWidth: 980,
-    margin: "0 auto",
-    padding: "0 16px 40px",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    textAlign: "center",
-    gap: 6,
-    color: "rgba(0,0,0,0.55)",
-    fontSize: "0.9rem",
-  },
-  footerText: { margin: 0 },
 };
