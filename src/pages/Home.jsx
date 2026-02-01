@@ -3,6 +3,22 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
     console.log("RENDER: Home");
+  const blogs = [
+    {
+      title: "OpenID Connect Extended Authentication Profile (EAP)",
+      description:
+        "A technical guide to phishing-resistant authentication using EAP with FIDO2/WebAuthn.",
+      date: "January 31, 2026",
+      path: "/blog/openid-connect-eap",
+    },
+    {
+      title: "AI-Driven API Design: Principles and Governance",
+      description:
+        "How to use AI to accelerate API design without losing determinism, backward compatibility, and trust.",
+      date: "January 24, 2026",
+      path: "/blog/ai-driven-api-design",
+    },
+  ];
   return (
     <div className="page">
       <div className="glow glow-a" aria-hidden="true" />
@@ -106,7 +122,7 @@ export default function Home() {
           <div className="stack">
             <p className="lead">Latest</p>
 
-            <Link to="/blog/ai-driven-api-design" style={{ textDecoration: "none" }}>
+            <Link to={blogs[0].path} style={{ textDecoration: "none" }}>
               <div
                 style={{
                   padding: 16,
@@ -115,14 +131,36 @@ export default function Home() {
                 }}
               >
                 <h3 style={{ margin: "0 0 6px" }}>
-                  AI-Driven API Design: Principles and Governance
+                  {blogs[0].title}
                 </h3>
-                <p style={{ margin: 0, opacity: 0.85 }}>
-                  How to use AI to accelerate API design without losing determinism,
-                  backward compatibility, and trust.
+                <p style={{ margin: 0, opacity: 0.75 }}>
+                  {blogs[0].date}
+                </p>
+                <p style={{ margin: "6px 0 0", opacity: 0.85 }}>
+                  {blogs[0].description}
                 </p>
               </div>
             </Link>
+
+            <div style={{ display: "grid", gap: 12, marginTop: 18 }}>
+              {blogs.slice(1).map((blog) => (
+                <Link key={blog.path} to={blog.path} style={{ textDecoration: "none" }}>
+                  <div
+                    style={{
+                      padding: 16,
+                      border: "1px solid rgba(255,255,255,0.12)",
+                      borderRadius: 12,
+                    }}
+                  >
+                    <h3 style={{ margin: "0 0 6px" }}>{blog.title}</h3>
+                    <p style={{ margin: 0, opacity: 0.75 }}>{blog.date}</p>
+                    <p style={{ margin: "6px 0 0", opacity: 0.85 }}>
+                      {blog.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
 
           </div>
         </section>
