@@ -9,5 +9,5 @@ export default function App() {
       <Route path="/blog/ai-driven-api-design" element={<AiDrivenApiDesign />} />
       <Route path="*" element={<div style={{ padding: 40 }}>NOT FOUND</div>} />
     </Routes>
-  );
+  );  
 }
