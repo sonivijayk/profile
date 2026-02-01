@@ -8,8 +8,10 @@
   position: sticky;
   top: 0;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
+  gap: 16px;
   padding: 16px 6vw;
   background: #ffffff;
   border-bottom: 1px solid var(--ink-100);
